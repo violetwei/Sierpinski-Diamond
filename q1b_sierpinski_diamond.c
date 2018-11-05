@@ -1,6 +1,3 @@
-/* COMP206_Assignment2    Part B) Sierpinski Diamond */
-
-
 /* This is a program which prints a modified diamond, such that each of the top and bottom half are Sierpiński Triangles. 
  * Your program should take two arguments: the height of the diamond, H, and the fractal level, L. 
  *
@@ -26,7 +23,6 @@ int check_power_of_two(int num);
 void get_diamond_shape (int h, char ** arr);
 void cut_top_triangle(int row_index, int column_index, int cut_height, int cut_length, char ** arr, int fractal_level);
 void cut_bottom_triangle(int row_index, int column_index, int cut_height, int cut_length, char ** arr, int fractal_level);
-//void cut_all_triangle(int row_index, int column_index, int cut_height, int cut_length, char ** arr, int fractal_level);
 
 int main(int argc, char * argv[]) {
 	
@@ -39,7 +35,7 @@ int main(int argc, char * argv[]) {
     // get the input argument 
 	int diamond_height = strtol(argv[1], NULL, 10);
 	int fractal_level = strtol(argv[2], NULL, 10);
-  //int fractal_level2 = strtol(argv[2], NULL, 10);
+  
 
   //check if the fractal level is a positive integer and greter than 0
   if(fractal_level <= 0){
@@ -50,8 +46,6 @@ int main(int argc, char * argv[]) {
   int row = diamond_height;
   int column = diamond_height;
   int i, j;
-
-  //int actual_cutting_times = fractal_level -1;
 
   //malloc 2D array memory -- using pointer to a pointer
   // create an array of pointers also dynamically using a double pointer
@@ -76,13 +70,10 @@ int main(int argc, char * argv[]) {
 		//do something
         //printf("success\n");
     get_diamond_shape(tri_height, arr);
-    //cut_triangle(actual_cutting_times);
 
     cut_top_triangle(tri_height/2, tri_height/2, tri_height/2, (diamond_height-1)/2, arr, fractal_level);
 
     cut_bottom_triangle(tri_height/2+(diamond_height-1)/2-1, tri_height/2, tri_height/2, (diamond_height-1)/2, arr, fractal_level);
-
-      //cut_all_triangle(tri_height/2, tri_height/2, tri_height/2, (diamond_height-1)/2, arr, fractal_level);
 
     for(int w=0; w<row; w++){
       for(int e=0; e<column; e++){
@@ -201,11 +192,7 @@ int main(int argc, char * argv[]) {
              }
           }
       }
-      //arr[row_index+i-1][column_index+i+j-2]=' ';
-	    //arr[row_index+i-1][column_index+i+j-1]='*';
-
-      //fractal_level--;
-
+     
       if(fractal_level > 1){
         //cut top triangle
         cut_top_triangle(row_index-cut_height/2, column_index+cut_height/2, cut_height/2, (cut_length-1)/2, arr, fractal_level-1);
@@ -246,69 +233,3 @@ int main(int argc, char * argv[]) {
 
 
     }
-
-    /*void cut_all_triangle(int row_index, int column_index, int cut_height, int cut_length, char ** arr, int fractal_level){
-      cut_bottom_triangle(row_index, column_index, cut_height, cut_length, arr, fractal_level);
-      cut_top_triangle(row_index, column_index, cut_height, cut_length, arr, fractal_level);
-    }*/
-
-
-    // the function which will remove relative * according to Sierpinski triangle rule and the input fractal_level
-   /*  void cut_triangle(int t, char ** arr){
-      int k = 0;
-      int g = 0;
-      int mid_line = tri_height/2;
-
-      for(int u=0; u<t; u++){
-
-        for(int i = 1; i<=mid_line; i++){
-
-          for(int j = 0; j < 2 * (mid_line - i) + 1; j++){
-
-            arr[mid_line + k][mid_line + k + j]=" ";
-          }       
-          k++;
-        }
-
-        for(int a=1; a <= mid_line - 1; a++){
-
-          for(int b=0; b < (2*a)+1; b++){
-            arr[tri_height+g][tri_height-1-a+b]=" ";
-          }
-          g++;
-        }
-
-        k=g=0;
-
-        mid_line=mid_line/2;
-      }
-    }
-
-    */
-
-    //cut top part triangles using recursively cut
-    /*void cut_top_triangle(int left_row, int left_column, int right_column, int bottom_row, char ** arr){
-      int i, j;
-      for(i=0; i<=bottom_row-left_row; i++){
-        for(j=0; j<=right_column-left_column-2*i; j++){
-          arr[left_row+i][left_column+i+j]=' ';
-        }
-      }
-
-    }*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
