@@ -3,6 +3,7 @@ This is a program written in C that prints a modified diamond,
 
 such that each of the top and bottom half are Sierpiński Triangles.
 
+![dia](https://user-images.githubusercontent.com/31902939/48029836-4d2e9600-e11d-11e8-8f7f-af959fc9203b.jpg)
 
 This program should take two arguments: the height of the diamond, H, and the fractal level, L. 
 
