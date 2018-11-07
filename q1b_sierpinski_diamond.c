@@ -201,7 +201,7 @@ int main(int argc, char * argv[]) {
         //cut right
         cut_top_triangle(row_index+cut_height/2, (column_index + cut_length - ((cut_height - 1)/2)), cut_height/2, (cut_length-1)/2, arr, fractal_level-1);
       }else{
-        //exit(1);
+        
       }
 
     }
@@ -217,8 +217,6 @@ int main(int argc, char * argv[]) {
           }
         }
       }
-
-      //fractal_level--;
 
       if(fractal_level > 1){
         //cut bottom triangle
