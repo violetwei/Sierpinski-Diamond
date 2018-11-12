@@ -1,9 +1,3 @@
-/*
- * COMP206_Assignment2--q1a_simple_diamond.c
- *
- *  Created on: Sep 26, 2018    Author: Wei Zhenzhou
- */
-
 /* this a program which takes 1 argument, the height H of the diamond */
 /*
  * Program description:
@@ -26,8 +20,6 @@
 void print_diamond (int h);
 
 int main(int argc, char * argv[]) {
-    // strtol: string to long(string, endptr, base)
-    // argv[1] is a pointer to a string
     
     if(argc == 1){
         printf("ERROR: Wrong number of arguments. One required.\n");
@@ -46,7 +38,6 @@ int main(int argc, char * argv[]) {
 
     }else if (argc > 2){
         printf("ERROR: Wrong number of arguments. One required.\n");
-        //exit(0);
     }    
     else{
         printf("ERROR: Bad argument. Height must be positive odd integer.\n");
